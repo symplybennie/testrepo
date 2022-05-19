@@ -7,51 +7,51 @@
 
 int print_char(va_list c)
 {
-char ch;
-ch = va_arg(c, int);
-return (write(1, &ch, 1));
+char ch_ar;
+ch_ar = va_arg(c, int);
+return (write(1, &ch_ar, 1));
 }
 int print_string(va_list s)
 {
-char *str;
-str = va_arg(s, char *);
+char *str_ng;
+str_ng = va_arg(s, char *);
 
-if (str == NULL)
-str = "(null)";
-return (write(1, str, strlen(str)));
+if (str_ng == NULL)
+str_ng = "(null)";
+return (write(1, str_ng, strlen(str_ng)));
 }
 int print_int(va_list i)
 {
-char *str;
-int a = va_arg(i, int);
-int j = 0;
-int k = 0;
+char *str_p;
+int a_list = va_arg(i, int);
+int b_list = 0;
+int c_list = 0;
 
-if (a < 0)
+if (a_list < 0)
 {
-j = 1;
-a = -a;
+b_list = 1;
+a_list = -a_list;
 }
-str = malloc(sizeof(char) * 12);
-if (str == NULL)
+str_p = malloc(sizeof(char) * 12);
+if (str_p == NULL)
 return (-1);
-while (a > 0)
+while (a_list > 0)
 {
-str[k] = a % 10 + '0';
-a = a / 10;
-k++;
+str_p[c_list] = a_list % 10 + '0';
+a_list = a_list / 10;
+c_list++;
 }
-if (j == 1)
-str[k] = '-';
+if (b_list == 1)
+str_p[c_list] = '-';
 else
-k--;
-k++;
-while (k >= 0)
+c_list--;
+c_list++;
+while (c_list >= 0)
 {
-write(1, &str[k], 1);
-k--;
+write(1, &str_p[c_list], 1);
+c_list--;
 }
-free(str);
+free(str_p);
 return (0);				    
 }
 int print_unint(va_list u)
