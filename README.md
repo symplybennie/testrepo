@@ -25,7 +25,3 @@ _printf replicates the C standard library printf() function.
 - _printf("Hello, Holberton\n") prints "Hello, Holberton", followed by a new line
 - _printf("%s", "Hello") prints "Hello"
 - _printf("This is a number: %d", 98) prints "This is a number: 98"
-
-## Authors
-> - David Livingstone Hini - kwamelivingstone77@gmail.com
-> - Biniyam Tamene - binitame123@gmail.com
