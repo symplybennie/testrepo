@@ -1,18 +1,21 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _MAIN_
+#define _MAIN_
+
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <limits.h>
+
 /**
 * struct op - flag / function object
-*@c: flag
-*@f: function
+* @c: flag
+* @f: function
 */
+
 typedef struct op
 {
-char *c;
-int (*f)(va_list);
+	char *c;
+	int (*f)(va_list);
 } op_t;
 
 int _printf(const char *format, ...);
@@ -27,4 +30,5 @@ int print_u(va_list ar_list);
 int print_o(va_list ar_list);
 int print_x(va_list ar_list);
 int print_X(va_list ar_list);
+
 #endif
